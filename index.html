@@ -301,7 +301,10 @@ function createItem(item) {
                 setTimeout(() => {
                     // itemEl.removeAttribute('open');
                    // itemEl.classList.add('complete');
-                    itemEl.querySelector('.item-quiz').classList.add('visible');
+                   // itemEl.querySelector('.item-quiz').classList.add('visible');
+                     itemEl.querySelectorAll('.item-quiz').forEach((quizEl) => {
+                        quizEl.classList.add('complete');
+                     })
                 },1500)
             }
           }
