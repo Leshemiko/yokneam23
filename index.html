@@ -51,8 +51,8 @@
             }
 
             .description {
-                margin: 35px auto;
-                font-size: 1.2rem;
+                margin: 35px auto 15px;
+                font-size: 1rem;
             }
 
             details {
@@ -136,6 +136,16 @@
                 border-radius: 15px;
                 color: #fff;
             }
+            .sumdisc, .sumdisc *  {
+                font-size: 1rem;
+                color: rgb(255, 17, 0);
+            }
+            p.discalimer{
+                padding: 0;
+                margin: 0px 0 35px;
+                font-size: .9rem;
+                color: orange;
+            }
     </style>
 </head>
 <body>
@@ -146,6 +156,16 @@
             כשכל השאלות יענו נכונה יפתח לכם הרמז לתחנה הבאה. <br>
             בהצלחה!
         </p>
+        <details open>
+            <summary class="sumdisc">
+                <span>הוראות נוספות</span>
+            </summary>
+            <p class="discalimer">
+                סדר התחנות נבחר באופן אקראי לכל משתתפ/ת. <br>
+                בכל שלב, רק התחנה הנוכחית תצבע בלבן וניתן יהיה לענות על השאלות. <br>
+                תחנות שהושלמו בהצלחה יצבעו בירוק. <br>
+            </p>
+        </details>
         <div class="item-wrap"> </div>
         <button class="refresh" onclick="reset();">אפס והתחל משחק מהתחלה</button>
     </div>
@@ -401,12 +421,25 @@
             }
         ];  
         // it should randomly assign first station and change status to active as long as it is not final station
-        const firstStation = initialQuizItems[Math.floor(Math.random() * initialQuizItems.length)];
-        initialQuizItems[initialQuizItems.indexOf(firstStation)].status = 'active';
-        
+        function randomlyActivate(array) {
+            // Generate a random index within the range of the array length
+            const index = Math.floor(Math.random() * array.length);
+            console.log('index->', index)
+            // Check if the item at the randomly generated index has 'isFinalStation' set to false
+            if (!array[index].isFinalStation) {
+                // Set 'active' property to true for the item at the randomly generated index
+                array[index].status = 'active';
+            } else {
+                // If the item at the randomly generated index has 'isFinalStation' set to true, call the function again
+                randomlyActivate(array);
+            }
+
+            return array;
+        }
+        const initiatedItems = randomlyActivate(initialQuizItems);
         // it should save quiz items in local storage - if already exist, it should not override it with initial quiz items
         if (!localStorage.getItem('quizItems'))
-         localStorage.setItem('quizItems', JSON.stringify(initialQuizItems));
+         localStorage.setItem('quizItems', JSON.stringify(initiatedItems));
          // it should get quiz items from local storage
         const quizItems = JSON.parse(localStorage.getItem('quizItems')); 
        // iterate over quiz items and create elements
