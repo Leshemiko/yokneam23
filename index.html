@@ -180,7 +180,7 @@
                 location: "https://goo.gl/maps/1EvygKr9kYhEKWKC8",
                 locationHint: 'חפשו את העץ השלישי מימין',
                 isFinalStation: false,
-                status: 'active',
+                status: 'new',
                 assignedNextStation: null
             },
             {
@@ -400,7 +400,11 @@
                 assignedNextStation: null
             }
         ];  
-       // it should save quiz items in local storage - if already exist, it should not override it with initial quiz items
+        // it should randomly assign first station and change status to active as long as it is not final station
+        const firstStation = initialQuizItems[Math.floor(Math.random() * initialQuizItems.length)];
+        initialQuizItems[initialQuizItems.indexOf(firstStation)].status = 'active';
+        
+        // it should save quiz items in local storage - if already exist, it should not override it with initial quiz items
         if (!localStorage.getItem('quizItems'))
          localStorage.setItem('quizItems', JSON.stringify(initialQuizItems));
          // it should get quiz items from local storage
