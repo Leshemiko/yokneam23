@@ -126,9 +126,15 @@
                 color: gray;
             }
             .refresh{
-                color: orange;
-                text-decoration: underline;
+                background: orange;
                 margin-top: 30px;
+                appearance: none;
+                border: 1px solid orange;
+                outline: 0;
+                font-size: 1rem;
+                padding: 5px;
+                border-radius: 15px;
+                color: #fff;
             }
     </style>
 </head>
@@ -141,7 +147,7 @@
             בהצלחה!
         </p>
         <div class="item-wrap"> </div>
-        <div class="refresh" onclick="reset();">אפס והתחל משחק מהתחלה</div>
+        <button class="refresh" onclick="reset();">אפס והתחל משחק מהתחלה</button>
     </div>
     <script>
         function reset() {
