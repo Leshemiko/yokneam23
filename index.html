@@ -78,6 +78,7 @@
             .item-quiz {
                 padding: 20px;
                 display: none;
+                border: 1px dotted;
             }
 
             .item-quiz.visible {
@@ -146,6 +147,12 @@
                 font-size: .9rem;
                 color: orange;
             }
+            .item-location a{
+                color: #fff;
+            }
+            .item-description, .item-location {
+                padding: 10px 20px;
+            }
     </style>
 </head>
 <body>
@@ -170,6 +177,20 @@
         <button class="refresh" onclick="reset();">אפס והתחל משחק מהתחלה</button>
     </div>
     <script>
+        function activateElement(el){
+            console.log('el->', el);
+            //if element does not have class active- return
+            if(!el.classList.contains('active')) return;
+            //if element has class active - add attribute 'open' and ease scroll into view
+            document.querySelectorAll('.item').forEach(item => {
+                item.removeAttribute('open');
+            });
+            // it should add attribute open to the element
+            el.setAttribute('open', '');
+            el.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+            //find all .item and remove attribute 'open'
+
+        }; 
         function reset() {
             localStorage.clear();
             location.reload();
@@ -197,8 +218,8 @@
                         correctAnswer: 1
                     }
                 ],
-                location: "https://goo.gl/maps/1EvygKr9kYhEKWKC8",
-                locationHint: 'חפשו את העץ השלישי מימין',
+                location: "https://goo.gl/maps/kDQNGaCu9eczU5S7A",
+                locationHint: 'חפשו תמרור אין כניסה',
                 isFinalStation: false,
                 status: 'new',
                 assignedNextStation: null
@@ -224,8 +245,8 @@
                         correctAnswer: 2
                     }
                 ],
-                location: "https://goo.gl/maps/1EvygKr9kYhEKWKC8",
-                locationHint: 'חפשו את העץ השלישי מימין',
+                location: "https://goo.gl/maps/NUbiW3grKcRBS2qc6",
+                locationHint: 'חפשו את המגרסה',
                 isFinalStation: false,
                 status: 'new',
                 assignedNextStation: null
@@ -237,7 +258,7 @@
                 questions: [
                     {
                         question: "מה פירוש השם 'המפתן'?",
-                        answers: ["לפתן", "מפעל תעשיה לנשים", "מפעל תעשיה לנוער", "מפקדת תנועות נוער"],
+                        answers: ["לפתן", "מפעל תעשיה לנשים", "מפעל תעסוקה לנוער", "מפקדת תנועות נוער"],
                         correctAnswer: 2
                     },
                     {
@@ -251,8 +272,8 @@
                         correctAnswer: 0
                     }
                 ],
-                location: "https://goo.gl/maps/1EvygKr9kYhEKWKC8",
-                locationHint: 'חפשו את העץ השלישי מימין',
+                location: "https://goo.gl/maps/YDcdZfJTAFerUpaY8",
+                locationHint: 'חפשו את השער הגדול',
                 isFinalStation: false,
                 status: 'new',
                 assignedNextStation: null
@@ -278,8 +299,8 @@
                         correctAnswer: 2
                     }
                 ],
-                location: "https://goo.gl/maps/1EvygKr9kYhEKWKC8",
-                locationHint: 'חפשו את העץ השלישי מימין',
+                location: "https://goo.gl/maps/cP1LNCZNBriqY2Ap6",
+                locationHint: 'ליד הדלת',
                 isFinalStation: true,
                 status: 'new',
                 assignedNextStation: null
@@ -305,8 +326,8 @@
                         correctAnswer: 2
                     }
                 ],
-                location: "https://goo.gl/maps/1EvygKr9kYhEKWKC8",
-                locationHint: 'חפשו את העץ השלישי מימין',
+                location: "https://goo.gl/maps/3aXakMVycvm7Q5yH8",
+                locationHint: 'ארון האש ליד הספרייה',
                 isFinalStation: false,
                 status: 'new',
                 assignedNextStation: null
@@ -332,8 +353,8 @@
                         correctAnswer: 1
                     }
                 ],
-                location: "https://goo.gl/maps/1EvygKr9kYhEKWKC8",
-                locationHint: 'חפשו את העץ השלישי מימין',
+                location: "https://goo.gl/maps/SQzjrBgJ7eeGjiRh8",
+                locationHint: 'על ארון האש בצד',
                 isFinalStation: false,
                 status: 'new',
                 assignedNextStation: null
@@ -359,8 +380,8 @@
                         correctAnswer: 3
                     }
                 ],
-                location: "https://goo.gl/maps/1EvygKr9kYhEKWKC8",
-                locationHint: 'חפשו את העץ השלישי מימין',
+                location: "https://goo.gl/maps/7tumyJyYPUGpCmNA6",
+                locationHint: 'חפשו את השלט הכחול',
                 isFinalStation: false,
                 status: 'new',
                 assignedNextStation: null
@@ -386,8 +407,8 @@
                         correctAnswer: 2
                     }
                 ],
-                location: "https://goo.gl/maps/1EvygKr9kYhEKWKC8",
-                locationHint: 'חפשו את העץ השלישי מימין',
+                location: "https://goo.gl/maps/HZXGhDf7jsAD62K98",
+                locationHint: 'מצד שמאל של הבניין',
                 isFinalStation: false,
                 status: 'new',
                 assignedNextStation: null
@@ -413,8 +434,8 @@
                         correctAnswer: 0
                     }
                 ],
-                location: "https://goo.gl/maps/1EvygKr9kYhEKWKC8",
-                locationHint: 'חפשו את העץ השלישי מימין',
+                location: "https://goo.gl/maps/wby8fRVwstzje8V79",
+                locationHint: 'עלו לתל, עמדו בכניסה לכנסייה והסתכלו דרומה על הקיר שמולכם',
                 isFinalStation: false,
                 status: 'new',
                 assignedNextStation: null
@@ -457,6 +478,7 @@
             //if status is active, it should add class 'active' to item element and child elements
             if (item.status === 'active') {
                 itemEl.classList.add('active');
+                setTimeout(() => activateElement(itemEl), 1000);
             }
             // if items status is new, it should add class 'new' to item element and child elements
             if (item.status === 'new') {
@@ -473,8 +495,8 @@
                 const assignedNextStationEl = document.createElement('div');
                 assignedNextStationEl.classList.add('item-assigned-next-station');
                 assignedNextStationEl.innerHTML = `<div>
-                                            המיקום הבא הוא: ${assignedNextStation.item} - ${assignedNextStation.name}
-                                            <div><a href="${assignedNextStation.location}" target="_blank">(לחץ כאן לפתיחת המיקום על המפה)</a></div> </div> <div>והרמז הוא: ${assignedNextStation.locationHint}</div>`;
+                                            המיקום הבא הוא: ${assignedNextStation.item} - ${assignedNextStation.name}`;
+            
                 // itemEl.innerText = item.item;
        
                 itemEl.appendChild(assignedNextStationSum);
@@ -486,6 +508,7 @@
                 if (item.isFinalStation && item.status === 'active') {
                     itemEl.classList.add('active');
                     itemEl.classList.remove('new');
+                    setTimeout(() => activateElement(itemEl), 1000);
                 }
                 else if (item.isFinalStation && item.status === 'complete') {
                     const finalMessageEl = document.createElement('div');
@@ -501,6 +524,16 @@
                 summarySpan.innerText = `${item.item}`;
                 summaryEl.appendChild(summarySpan);
                 itemEl.appendChild(summaryEl);
+                const itemDescriptionEl = document.createElement('div');
+                itemDescriptionEl.classList.add('item-description');
+                itemDescriptionEl.innerText = item.name;
+                // it should have item.location and hint    
+                const itemLocationEl = document.createElement('div');   
+                itemLocationEl.classList.add('item-location');
+                itemLocationEl.innerHTML = `<div><a href="${item.location}" target="_blank">(לחץ כאן לפתיחת המיקום על המפה)</a></div> <div>רמז: ${item.locationHint}</div>`;
+                itemEl.appendChild(itemDescriptionEl);
+                itemEl.appendChild(itemLocationEl);
+            
     
                 for (let i = 0; i < item.questions.length; i++) {
                     const quiz = item.questions[i];
@@ -589,13 +622,13 @@
                                             }else {
 
                                                 messageEl.innerHTML = `כל הכבוד, תשובות נכונות! <div>
-                                                    המיקום הבא הוא: ${randomItem.item} - ${randomItem.name} <br>
-                                                    <div><a href="${randomItem.location}" target="_blank">(לחץ כאן לפתיחת המיקום על המפה)</a></div> </div> <div>והרמז הוא: ${randomItem.locationHint}</div>`;
+                                                    המיקום הבא הוא: ${randomItem.item} - ${randomItem.name}</div>`;
                                             }
                                             randomItem.status = isQuizCompleted ? 'complete' : 'active';
                                             //it should add class 'active' to the random item element and remove class 'new'
                                             document.querySelector(`[data-id="${randomItem.id}"]`).classList.add('active');
                                             document.querySelector(`[data-id="${randomItem.id}"]`).classList.remove('new');
+                                            setTimeout(activateElement(document.querySelector(`[data-id="${randomItem.id}"]`)),1000)
 
                                             //save item assignedNextStation in local storage
                                             if(!isQuizCompleted) {
@@ -609,6 +642,7 @@
                                             finalStation.status = 'active';
                                             document.querySelector(`[data-id="${finalStation.id}"]`).classList.add('active');
                                             document.querySelector(`[data-id="${finalStation.id}"]`).classList.remove('new');
+                                            setTimeout(activateElement(document.querySelector(`[data-id="${finalStation.id}"]`)),1000)
                                         }
     
                                     },2500)
