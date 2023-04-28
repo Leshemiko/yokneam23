@@ -419,7 +419,7 @@
                 id: 9, 
                 questions: [
                     {
-                        question: "במשך כמה שנים היתה התישבות ביקנעם?",
+                        question: "במשך כמה שנים היתה התישבות בתל יקנעם?",
                         answers: ["6000", "600", "4000", "3000"],
                         correctAnswer: 2
                     },
@@ -618,7 +618,8 @@
                                             const randomItem = newItems.find((item) => item.id === item.assignedNextStation) || newItems[Math.floor(Math.random() * newItems.length)] || quizItems.find((item) => item.isFinalStation);
                                             const isQuizCompleted = quizItems.every((item) => item.status === 'complete');
                                             if(isQuizCompleted){
-                                                messageEl.innerHTML = `כל הכבוד!!! סיימתם את המשחק!!!`;
+                                                messageEl.innerHTML = `כל הכבוד! סיימתם את המשחק! אתם במקום הראשון!!! <div>
+                                                    זכיתם בפרס הראשון: השתתפות בשיפוץ המגדל!!</div>`;
                                             }else {
 
                                                 messageEl.innerHTML = `כל הכבוד, תשובות נכונות! <div>
