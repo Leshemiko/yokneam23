@@ -218,8 +218,8 @@
                         correctAnswer: 1
                     }
                 ],
-                location: "https://maps.app.goo.gl/ur1v2QPTyCTfF37r6",
-                locationHint: 'חפשו תמרור אין כניסה',
+                location: "https://maps.app.goo.gl/hAxKybkin5QnkDta7",
+                locationHint: 'חפשו על התמונה',
                 isFinalStation: false,
                 status: 'new',
                 assignedNextStation: null
@@ -434,8 +434,8 @@
                         correctAnswer: 0
                     }
                 ],
-                location: "https://maps.app.goo.gl/obVqqLtXtNPkQ3iq8",
-                locationHint: 'עלו לתל, עמדו בכניסה לכנסייה והסתכלו דרומה על הקיר שמולכם',
+                location: "https://maps.app.goo.gl/UDUQvqJvq1GT4qcd8",
+                locationHint: 'חפשו על העץ',
                 isFinalStation: false,
                 status: 'new',
                 assignedNextStation: null
@@ -513,7 +513,7 @@
                 else if (item.isFinalStation && item.status === 'complete') {
                     const finalMessageEl = document.createElement('div');
                     finalMessageEl.classList.add('item-final-message');
-                    finalMessageEl.innerText = 'כל הכבוד! סיימתם את המשחק! זכיתם בפרס הגדול: קרנבל נטיעות בדרך העמק!!!!!';
+                    finalMessageEl.innerText = 'כל הכבוד! סיימתם את המשחק! הגיעו לגן רינה לפעילות משותפת!!!!!';
                     itemEl.appendChild(finalMessageEl);
                 }
             }
@@ -619,7 +619,7 @@
                                             const isQuizCompleted = quizItems.every((item) => item.status === 'complete');
                                             if(isQuizCompleted){
                                                 messageEl.innerHTML = `כל הכבוד! סיימתם את המשחק! אתם במקום הראשון!!! <div>
-                                                    זכיתם בפרס הראשון: השתתפות בשיפוץ המגדל!!</div>`;
+                                                    הגיעו לגן רינה לפעילות משותפת!!</div>`;
                                             }else {
 
                                                 messageEl.innerHTML = `כל הכבוד, תשובות נכונות! <div>
